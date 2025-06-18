@@ -149,19 +149,15 @@ if uploaded_file is not None:
         ax_time.plot(time_interp, z_f, label='Z')
         ax_time.set_xlabel('Tempo (s)')
         ax_time.set_ylabel('Aceleração (m/s²)')
-        ax_time.legend()
         st.pyplot(fig_time)
 
     with col2:
         fig_spec, ax_spec = plt.subplots(figsize=(8, 5))
-        ax_spec.plot(freqx, spectral_resultant, label='FFT Resultante')
-        ax_spec.plot(freqx, envelope_spectral, color='red', linewidth=2,
-                     label=f'Envelope Espectral (Janela={window_size})')
+        ax_spec.plot(freqx, spectral_resultant)
+        ax_spec.plot(freqx, envelope_spectral, color='red', linewidth=2)
         ax_spec.set_xlim(0, 20)
         ax_spec.set_xlabel('Frequência (Hz)')
-        ax_spec.set_ylabel('Magnitude')
-        ax_spec.set_title('FFT Resultante com Envelope Espectral')
-        ax_spec.legend()
+        ax_spec.set_ylabel('Aceleração (m/s²)')
         st.pyplot(fig_spec)
 
     # ---------- Exportação ----------
