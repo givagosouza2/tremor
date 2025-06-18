@@ -64,7 +64,7 @@ def interpolate_signal(time, signal, target_fs):
 
 # ---------- Interface Streamlit ----------
 st.set_page_config(layout="wide")
-st.title("Análise de Tremor de Mãos (Acelerômetro) - Interpolação, Detrend e FFT com Envelope Espectral")
+st.title("Análise de Tremor de Mãos")
 
 uploaded_file = st.file_uploader(
     "📂 Faça o upload do arquivo (.csv ou .txt)", type=["csv", "txt"])
