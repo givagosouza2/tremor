@@ -125,9 +125,11 @@ if uploaded_file is not None:
     peak_magnitude_resultant = np.max(envelope_spectral)
 
     band_mask = (freqx >= 3) & (freqx <= 12)
-    band_power_resultant = np.trapz(
-        envelope_spectral[band_mask], freqx[band_mask])
-
+    #band_power_resultant = np.trapz(
+    #    envelope_spectral[band_mask], freqx[band_mask])
+    band_power_resultant = np.trapezoid(
+    envelope_spectral[band_mask], freqx[band_mask]
+)
     # ---------- Resultados ----------
     st.subheader("📈 Resultados Globais")
     st.markdown(f"**RMS (3–12 Hz):** {rms_value:.4f} m/s²")
